@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | David Tenny Book Marketing</title>
+  <meta name="description" content="Let's start a conversation about your book marketing goals. Get in touch with David Tenny for author branding, book launch campaigns, and digital strategy.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <script>
+    // Remove no-js class as early as possible
+    document.documentElement.classList.remove('no-js');
+  </script>
+
+  <style>
+    /* ==========================================
+       CSS VARIABLES & RESET
+       ========================================== */
+    :root {
+      --bg-primary: #090909;
+      --bg-secondary: #211A16;
+      --bg-tertiary: #161210;
+      --bronze: #A87945;
+      --bronze-soft: #c39a67;
+      --lavender: #B8A4D4;
+      --ivory: #F5F2ED;
+      --white: #FFFFFF;
+      --line: rgba(168, 121, 69, 0.22);
+      --line-soft: rgba(245, 242, 237, 0.09);
+      --card-bg: rgba(33, 26, 22, 0.65);
+      --card-hover: rgba(45, 36, 30, 0.85);
+      
+      --serif: 'Playfair Display', Georgia, serif;
+      --serif-alt: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', 'Segoe UI', sans-serif;
+      
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-primary);
+      color: var(--ivory);
+    }
+
+    body {
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.65;
+      background-color: var(--bg-primary);
+      color: var(--ivory);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    button, input, textarea, select {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================
+       PAGE ENTRANCE VEIL & ANIMATIONS
+       ========================================== */
+    #page-veil {
+      position: fixed;
+      inset: 0;
+      background-color: #050505;
+      z-index: 99999;
+      pointer-events: none;
+      transition: opacity 0.8s var(--ease);
+    }
+
+    body.loaded #page-veil {
+      opacity: 0;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Fallback for no-js or reduced motion */
+    .no-js .reveal-on-scroll {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      #page-veil {
+        display: none;
+      }
+    }
+
+    /* ==========================================
+       CONTAINER & LAYOUT HELPERS
+       ========================================== */
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.75rem;
+    }
+
+    .section-padding {
+      padding: 6.5rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 4.5rem 0;
+      }
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.825rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--bronze);
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 1.25;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* ==========================================
+       HEADER & NAVIGATION
+       ========================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.25rem 0;
+      transition: background-color 0.4s var(--ease), padding 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      background: linear-gradient(to bottom, rgba(9, 9, 9, 0.95) 0%, rgba(9, 9, 9, 0.4) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(168, 121, 69, 0.1);
+    }
+
+    .site-header.scrolled {
+      padding: 0.85rem 0;
+      background-color: rgba(9, 9, 9, 0.96);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border-bottom-color: var(--line);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-logo-img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.3s var(--ease);
+    }
+
+    .brand-logo-wrap:hover .brand-logo-img {
+      transform: scale(1.04);
+    }
+
+    .brand-fallback-monogram {
+      width: 42px;
+      height: 42px;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--bronze);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--bronze-soft);
+      font-weight: 600;
+    }
+
+    .brand-text {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: var(--white);
+    }
+
+    .brand-text span {
+      color: var(--bronze-soft);
+      font-weight: 400;
+    }
+
+    /* Desktop Navigation */
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .nav-link {
+      font-size: 0.925rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--ivory);
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background-color: var(--bronze);
+      transition: width 0.3s var(--ease);
+    }
+
+    .nav-link:hover {
+      color: var(--white);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: var(--bronze-soft);
+      font-weight: 500;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--bronze) 0%, #8c6033 100%);
+      color: var(--white) !important;
+      padding: 0.6rem 1.35rem;
+      border-radius: 2px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(168, 121, 69, 0.25);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .nav-cta::after {
+      display: none;
+    }
+
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: left 0.6s var(--ease);
+    }
+
+    .nav-cta:hover::before {
+      left: 100%;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(168, 121, 69, 0.4);
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1001;
+    }
+
+    .hamburger-icon {
+      width: 26px;
+      height: 18px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hamburger-line {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--ivory);
+      transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+    }
+
+    .mobile-menu-toggle.is-active .hamburger-line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.is-active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.is-active .hamburger-line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-nav-drawer {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(9, 9, 9, 0.98);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s var(--ease);
+      backdrop-filter: blur(15px);
+    }
+
+    .mobile-nav-drawer.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.75rem;
+      text-align: center;
+    }
+
+    .mobile-nav-links .nav-link {
+      font-size: 1.35rem;
+      font-family: var(--serif);
+    }
+
+    @media (max-width: 900px) {
+      .desktop-nav {
+        display: none;
+      }
+      .mobile-menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ==========================================
+       HERO SECTION - CONTACT
+       ========================================== */
+    .hero-contact {
+      padding-top: 11rem;
+      padding-bottom: 5rem;
+      position: relative;
+      background: radial-gradient(circle at 50% 20%, rgba(33, 26, 22, 0.8) 0%, var(--bg-primary) 70%);
+      border-bottom: 1px solid var(--line-soft);
+      overflow: hidden;
+    }
+
+    .hero-contact::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(168, 121, 69, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .hero-content-box {
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: 3.35rem;
+      font-weight: 500;
+      line-height: 1.18;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.35rem;
+      }
+    }
+
+    .hero-intro {
+      font-family: var(--serif-alt);
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: rgba(245, 242, 237, 0.88);
+      max-width: 780px;
+      margin: 0 auto 2.5rem;
+      font-weight: 400;
+    }
+
+    @media (max-width: 768px) {
+      .hero-intro {
+        font-size: 1.15rem;
+      }
+    }
+
+    .quick-email-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(33, 26, 22, 0.8);
+      border: 1px solid var(--line);
+      padding: 0.75rem 1.5rem;
+      border-radius: 40px;
+      color: var(--bronze-soft);
+      font-size: 0.95rem;
+      font-family: var(--sans);
+      letter-spacing: 0.03em;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .quick-email-pill:hover {
+      border-color: var(--bronze);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(168, 121, 69, 0.2);
+    }
+
+    .quick-email-pill svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ==========================================
+       MAIN CONTACT GRID (FORM & INFO)
+       ========================================== */
+    .contact-grid-section {
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    /* Left Info Column */
+    .contact-info-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--line-soft);
+      border-radius: 4px;
+      padding: 2.75rem;
+      position: relative;
+      backdrop-filter: blur(5px);
+    }
+
+    @media (max-width: 600px) {
+      .contact-info-card {
+        padding: 1.75rem;
+      }
+    }
+
+    .info-block {
+      margin-bottom: 2.25rem;
+    }
+
+    .info-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-block-label {
+      font-family: var(--sans);
+      font-size: 0.785rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--bronze);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .info-block-val {
+      font-size: 1.15rem;
+      color: var(--white);
+      line-height: 1.5;
+    }
+
+    .direct-email-link {
+      color: var(--white);
+      font-size: 1.25rem;
+      font-family: var(--serif);
+      border-bottom: 1px solid var(--bronze);
+      padding-bottom: 2px;
+      transition: var(--transition);
+      display: inline-block;
+      word-break: break-word;
+    }
+
+    .direct-email-link:hover {
+      color: var(--bronze-soft);
+      border-bottom-color: var(--white);
+    }
+
+    /* Author / Marketing Highlight Badge Box */
+    .author-badge-box {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line-soft);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .author-badge-photo-wrap {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--bronze);
+      flex-shrink: 0;
+      background-color: var(--bg-tertiary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      color: var(--bronze-soft);
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+
+    .author-badge-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-badge-info h4 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .author-badge-info p {
+      font-size: 0.875rem;
+      color: rgba(245, 242, 237, 0.7);
+      line-height: 1.4;
+    }
+
+    /* Form Container Column */
+    .contact-form-container {
+      background-color: rgba(33, 26, 22, 0.85);
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      padding: 3rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    @media (max-width: 600px) {
+      .contact-form-container {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+
+    .form-header {
+      margin-bottom: 2rem;
+    }
+
+    .form-header h3 {
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      color: var(--white);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-header p {
+      font-size: 0.925rem;
+      color: rgba(245, 242, 237, 0.7);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group.two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .form-group.two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ivory);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-label span.req {
+      color: var(--bronze-soft);
+      margin-left: 0.2rem;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      background-color: rgba(9, 9, 9, 0.7);
+      border: 1px solid var(--line-soft);
+      border-radius: 2px;
+      padding: 0.85rem 1rem;
+      color: var(--white);
+      font-size: 0.975rem;
+      transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+      outline: none;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--bronze);
+      box-shadow: 0 0 0 3px rgba(168, 121, 69, 0.15);
+      background-color: rgba(9, 9, 9, 0.9);
+    }
+
+    .form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%3CA87945' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .form-select option {
+      background-color: #161210;
+      color: var(--white);
+      padding: 0.5rem;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--bronze) 0%, #8c6033 100%);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1.1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 6px 20px rgba(168, 121, 69, 0.25);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .form-submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(168, 121, 69, 0.4);
+    }
+
+    .form-submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .form-submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: left 0.6s var(--ease);
+    }
+
+    .form-submit-btn:hover::before {
+      left: 100%;
+    }
+
+    /* Form Feedback Notices */
+    .form-status {
+      display: none;
+      padding: 1.25rem;
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+      font-size: 0.925rem;
+      line-height: 1.5;
+    }
+
+    .form-status.success {
+      display: block;
+      background-color: rgba(46, 125, 50, 0.15);
+      border: 1px solid rgba(76, 175, 80, 0.4);
+      color: #a5d6a7;
+    }
+
+    .form-status.error {
+      display: block;
+      background-color: rgba(198, 40, 40, 0.15);
+      border: 1px solid rgba(239, 83, 80, 0.4);
+      color: #ef9a9a;
+    }
+
+    .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--white);
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ==========================================
+       SECTION: WHAT HAPPENS NEXT (TIMELINE)
+       ========================================== */
+    .timeline-section {
+      background-color: var(--bg-secondary);
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    @media (max-width: 900px) {
+      .timeline-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .timeline-card {
+      background-color: rgba(9, 9, 9, 0.5);
+      border: 1px solid var(--line-soft);
+      padding: 2.25rem 1.75rem;
+      border-radius: 3px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .timeline-card:hover {
+      border-color: var(--line);
+      transform: translateY(-5px);
+      background-color: rgba(9, 9, 9, 0.8);
+    }
+
+    .timeline-step-num {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      color: var(--bronze-soft);
+      opacity: 0.6;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-card h3 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-card p {
+      font-size: 0.925rem;
+      color: rgba(245, 242, 237, 0.75);
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       SECTION: PRE-CONTACT INQUIRY ACCORDION
+       ========================================== */
+    .faq-quick-section {
+      position: relative;
+    }
+
+    .faq-quick-grid {
+      max-width: 860px;
+      margin: 3rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .faq-item {
+      background-color: var(--card-bg);
+      border: 1px solid var(--line-soft);
+      border-radius: 3px;
+      overflow: hidden;
+      transition: border-color 0.3s var(--ease);
+    }
+
+    .faq-item:hover {
+      border-color: var(--line);
+    }
+
+    .faq-question-btn {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 1.5rem 1.75rem;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 1rem;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      stroke: var(--bronze-soft);
+      transition: transform 0.3s var(--ease);
+      flex-shrink: 0;
+    }
+
+    .faq-item.is-open .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease), padding 0.4s var(--ease);
+      padding: 0 1.75rem;
+      font-size: 0.95rem;
+      color: rgba(245, 242, 237, 0.8);
+      line-height: 1.65;
+    }
+
+    .faq-item.is-open .faq-answer {
+      max-height: 300px;
+      padding: 0 1.75rem 1.5rem 1.75rem;
+    }
+
+    /* ==========================================
+       EDITORIAL SPLISH BANNER (UNSPLASH PHOTO)
+       ========================================== */
+    .editorial-banner {
+      position: relative;
+      height: 340px;
+      overflow: hidden;
+      background-color: var(--bg-tertiary);
+    }
+
+    .editorial-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.4) contrast(1.1);
+    }
+
+    .editorial-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(9, 9, 9, 0.85) 0%, rgba(9, 9, 9, 0.4) 100%);
+      display: flex;
+      align-items: center;
+    }
+
+    .editorial-banner-quote {
+      font-family: var(--serif-alt);
+      font-size: 1.75rem;
+      font-style: italic;
+      color: var(--ivory);
+      max-width: 680px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .editorial-banner-quote {
+        font-size: 1.35rem;
+      }
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    .site-footer {
+      background-color: #050505;
+      border-top: 1px solid var(--line-soft);
+      padding-top: 5rem;
+      padding-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 992px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    .footer-brand-name {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .footer-desc {
+      font-size: 0.9rem;
+      color: rgba(245, 242, 237, 0.65);
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .footer-col-title {
+      font-family: var(--sans);
+      font-size: 0.825rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--bronze);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      font-size: 0.925rem;
+      color: rgba(245, 242, 237, 0.75);
+      transition: color 0.3s var(--ease);
+    }
+
+    .footer-links a:hover {
+      color: var(--bronze-soft);
+    }
+
+    .footer-contact-info p {
+      font-size: 0.925rem;
+      color: rgba(245, 242, 237, 0.75);
+      line-height: 1.6;
+    }
+
+    .footer-email-link {
+      color: var(--ivory);
+      border-bottom: 1px dashed var(--bronze);
+      padding-bottom: 2px;
+      word-break: break-all;
+    }
+
+    .footer-email-link:hover {
+      color: var(--bronze-soft);
+      border-bottom-style: solid;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(245, 242, 237, 0.06);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: rgba(245, 242, 237, 0.5);
+    }
+
+    @media (max-width: 600px) {
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Veil -->
+  <div id="page-veil"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo-wrap" aria-label="David Tenny Book Marketing Home">
+          <img src="Logo.png" alt="David Tenny Book Marketing Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="brand-fallback-monogram" style="display:none;">DT</div>
+          <span class="brand-text">David Tenny <span>Book Marketing</span></span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about-us.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a href="faqs.html" class="nav-link">FAQs</a>
+          <a href="contact-us.html" class="nav-link nav-cta active" aria-current="page">Contact Us</a>
+        </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-icon">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-nav-drawer" id="mobileDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about-us.html" class="nav-link">About Us</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="faqs.html" class="nav-link">FAQs</a>
+      <a href="contact-us.html" class="nav-link nav-cta active" aria-current="page">Contact Us</a>
+    </nav>
+  </div>
+
+  <main id="main-content">
+    
+    <!-- HERO SECTION -->
+    <section class="hero-contact">
+      <div class="container">
+        <div class="hero-content-box reveal-on-scroll">
+          <span class="eyebrow">GET IN TOUCH</span>
+          <h1 class="hero-title">Let's Start a Conversation About Your Book Marketing Goals.</h1>
+          <p class="hero-intro">
+            Whether you're preparing to launch a new book, looking to strengthen your author brand, or exploring ways to improve your book's visibility, I'd love to learn more about your project and the marketing support you're looking for.
+          </p>
+          <div>
+            <a href="mailto:contact.davidtenny18@gmail.com" class="quick-email-pill" aria-label="Send direct email to contact.davidtenny18@gmail.com">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>contact.davidtenny18@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT GRID SECTION (FORM & DETAILS) -->
+    <section class="section-padding contact-grid-section">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- Left Column: Information & Direct Email -->
+          <div class="reveal-on-scroll">
+            <div class="contact-info-card">
+              <span class="eyebrow">DIRECT INQUIRIES</span>
+              <h2 class="section-title" style="font-size: 1.85rem; margin-bottom: 1.5rem;">Reach Out Directly</h2>
+              
+              <div class="info-block">
+                <div class="info-block-label">Business Email</div>
+                <div class="info-block-val">
+                  <a href="mailto:contact.davidtenny18@gmail.com" class="direct-email-link">contact.davidtenny18@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-block-label">Response Hours</div>
+                <div class="info-block-val">
+                  Monday – Friday: 9:00 AM – 6:00 PM EST<br>
+                  <span style="font-size: 0.9rem; color: rgba(245,242,237,0.65);">Inquiries are reviewed within 1–2 business days.</span>
+                </div>
+              </div>
+
+              <div class="info-block">
+                <div class="info-block-label">What to Include</div>
+                <div class="info-block-val" style="font-size: 0.95rem; color: rgba(245,242,237,0.8);">
+                  To help tailor our initial conversation, feel free to mention your manuscript stage, target publication dates, genre, and specific areas where you'd like support.
+                </div>
+              </div>
+
+              <!-- Author / Marketing Badge Card -->
+              <div class="author-badge-box">
+                <div class="author-badge-photo-wrap">
+                  <img src="MyPhoto.png" alt="David Tenny - Book Marketing Consultant" onerror="this.remove();">
+                  <span>DT</span>
+                </div>
+                <div class="author-badge-info">
+                  <h4>David Tenny</h4>
+                  <p>Book Marketing &amp; Author Brand Consultant</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Formspree Form -->
+          <div class="reveal-on-scroll" style="transition-delay: 0.15s;">
+            <div class="contact-form-container">
+              <div class="form-header">
+                <h3>Send a Message</h3>
+                <p>Fill out the form below to share details about your manuscript or marketing vision.</p>
+              </div>
+
+              <!-- Status Feedback Container -->
+              <div id="form-status-msg" class="form-status" role="alert" aria-live="polite"></div>
+
+              <!-- Real Formspree Form -->
+              <form id="contactForm" action="https://formspree.io/f/xkjrrwpd" method="POST" novalidate>
+                
+                <div class="form-group two-col">
+                  <div>
+                    <label for="name" class="form-label">Your Name <span class="req">*</span></label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Eleanor Vance" required aria-required="true">
+                  </div>
+                  <div>
+                    <label for="email" class="form-label">Email Address <span class="req">*</span></label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="e.g. eleanor@authorsite.com" required aria-required="true">
+                  </div>
+                </div>
+
+                <div class="form-group two-col">
+                  <div>
+                    <label for="book_title" class="form-label">Book Title / Working Title</label>
+                    <input type="text" id="book_title" name="book_title" class="form-input" placeholder="Optional">
+                  </div>
+                  <div>
+                    <label for="subject" class="form-label">Primary Subject / Need <span class="req">*</span></label>
+                    <select id="subject" name="subject" class="form-select" required aria-required="true">
+                      <option value="" disabled selected>Select an area of interest...</option>
+                      <option value="Book Launch Strategy">Book Launch Strategy</option>
+                      <option value="Author Brand & Website">Author Brand &amp; Website</option>
+                      <option value="Amazon & Metadata Optimization">Amazon &amp; Metadata Optimization</option>
+                      <option value="Social Media & Reader Outreach">Social Media &amp; Reader Outreach</option>
+                      <option value="Comprehensive Marketing Support">Comprehensive Marketing Support</option>
+                      <option value="General Inquiry">General Inquiry</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="form-label">Your Message <span class="req">*</span></label>
+                  <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your book, your current timeline, and what goals you hope to achieve..." required aria-required="true"></textarea>
+                </div>
+
+                <!-- Hidden Honeypot Field for Spam Protection -->
+                <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+                <button type="submit" id="submitBtn" class="form-submit-btn">
+                  <span>Send Message</span>
+                  <div class="spinner" id="btnSpinner"></div>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: WHAT HAPPENS AFTER YOU REACH OUT -->
+    <section class="section-padding timeline-section">
+      <div class="container">
+        <div class="reveal-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <span class="eyebrow">WHAT TO EXPECT</span>
+          <h2 class="section-title">What Happens After You Reach Out</h2>
+          <p style="color: rgba(245, 242, 237, 0.75);">
+            Transparency and structure are key to a successful book marketing partnership. Here is how our collaboration begins:
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          
+          <div class="timeline-card reveal-on-scroll">
+            <div class="timeline-step-num">01</div>
+            <h3>Inquiry Review</h3>
+            <p>Your message is carefully reviewed alongside your genre, publication timeline, and stated objectives to ensure a strong potential fit.</p>
+          </div>
+
+          <div class="timeline-card reveal-on-scroll" style="transition-delay: 0.15s;">
+            <div class="timeline-step-num">02</div>
+            <h3>Tailored Response</h3>
+            <p>You will receive a detailed email reply outlining strategic recommendations, relevant package options, and preliminary observations about your project.</p>
+          </div>
+
+          <div class="timeline-card reveal-on-scroll" style="transition-delay: 0.3s;">
+            <div class="timeline-step-num">03</div>
+            <h3>Strategy Execution</h3>
+            <p>Once an action plan is aligned with your expectations, execution begins with clear milestones, dedicated focus, and transparent communication.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: FREQUENT PRE-CONTACT QUESTIONS -->
+    <section class="section-padding faq-quick-section">
+      <div class="container">
+        <div class="reveal-on-scroll" style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <span class="eyebrow">COMMON QUESTIONS</span>
+          <h2 class="section-title">Before You Send a Message</h2>
+        </div>
+
+        <div class="faq-quick-grid reveal-on-scroll">
+          
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>How far in advance of my release date should I get in touch?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Ideally, reaching out 2 to 4 months prior to publication allows adequate time for pre-order campaign setup, ARC distribution strategy, and author digital platform preparation. However, support is also available for post-launch re-promotions.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>Do you work with both self-published and traditionally published authors?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              Yes. Independently published authors benefit from full strategy building and metadata optimization, while traditionally published authors frequently seek custom web design, newsletter sequence building, and supplementary digital advertising.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn" aria-expanded="false">
+              <span>What is the average response time for new inquiries?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              All inquiries sent through the form or emailed directly to <code>contact.davidtenny18@gmail.com</code> receive a response within 1 to 2 business days.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL PHOTO BANNER -->
+    <section class="editorial-banner">
+      <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1600&q=80" alt="Quiet writing desk with notebook and coffee cup" class="editorial-banner-img" loading="lazy">
+      <div class="editorial-banner-overlay">
+        <div class="container">
+          <blockquote class="editorial-banner-quote reveal-on-scroll">
+            "A great book deserves a thoughtful strategy. Let’s make sure your work reaches the readers who will cherish it."
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Info Column -->
+        <div class="footer-brand">
+          <a href="index.html" style="display:inline-block;">
+            <img src="Logo.png" alt="David Tenny Logo" class="footer-logo" onerror="this.style.display='none';">
+            <div class="footer-brand-name">David Tenny Book Marketing</div>
+          </a>
+          <p class="footer-desc">
+            Professional book marketing, creative promotion, and author branding — helping authors strengthen their presence and connect their books with readers.
+          </p>
+        </div>
+
+        <!-- Quick Links Column 1 -->
+        <div>
+          <h4 class="footer-col-title">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links Column 2 -->
+        <div>
+          <h4 class="footer-col-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-contact-info">
+          <h4 class="footer-col-title">Get in Touch</h4>
+          <p>Have questions or ready to launch your next campaign?</p>
+          <p style="margin-top: 0.75rem;">
+            Email: <a href="mailto:contact.davidtenny18@gmail.com" class="footer-email-link">contact.davidtenny18@gmail.com</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; <span id="year">2025</span> David Tenny Book Marketing. All rights reserved.</div>
+        <div>Designed for Authors &amp; Literary Excellence</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inline Script for Interactive Features -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // 1. Remove veil after load
+      setTimeout(function() {
+        document.body.classList.add('loaded');
+      }, 100);
+
+      // 2. Set dynamic year in footer
+      const yearSpan = document.getElementById('year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // 3. Header scroll state
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 40) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // 4. Mobile Navigation Drawer Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileDrawer = document.getElementById('mobileDrawer');
+
+      if (menuToggle && mobileDrawer) {
+        menuToggle.addEventListener('click', function() {
+          const isOpen = mobileDrawer.classList.contains('is-open');
+          if (isOpen) {
+            mobileDrawer.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mobileDrawer.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+          } else {
+            mobileDrawer.classList.add('is-open');
+            menuToggle.classList.add('is-active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            mobileDrawer.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+
+        // Close mobile drawer when clicking nav link
+        const drawerLinks = mobileDrawer.querySelectorAll('.nav-link');
+        drawerLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileDrawer.classList.remove('is-open');
+            menuToggle.classList.remove('is-active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            mobileDrawer.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+
+      // 5. IntersectionObserver Scroll Reveal
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(function(el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        revealElements.forEach(function(el) {
+          el.classList.add('is-visible');
+        });
+      }
+
+      // 6. Pre-Contact FAQ Accordion Functionality
+      const faqButtons = document.querySelectorAll('.faq-question-btn');
+      faqButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          const item = this.parentElement;
+          const isOpen = item.classList.contains('is-open');
+          
+          // Close other items
+          document.querySelectorAll('.faq-item').forEach(function(i) {
+            i.classList.remove('is-open');
+            const b = i.querySelector('.faq-question-btn');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          });
+
+          if (!isOpen) {
+            item.classList.add('is-open');
+            this.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      // 7. Formspree Form AJAX Handler with Graceful Fallback & Verification
+      const contactForm = document.getElementById('contactForm');
+      const statusMsg = document.getElementById('form-status-msg');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnSpinner = document.getElementById('btnSpinner');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          // Reset status
+          statusMsg.className = 'form-status';
+          statusMsg.style.display = 'none';
+          statusMsg.textContent = '';
+
+          const nameInput = document.getElementById('name');
+          const emailInput = document.getElementById('email');
+          const subjectSelect = document.getElementById('subject');
+          const messageInput = document.getElementById('message');
+
+          // Basic Field Validation
+          if (!nameInput.value.trim() || !emailInput.value.trim() || !subjectSelect.value || !messageInput.value.trim()) {
+            showFormStatus('error', 'Please fill in all required fields marked with an asterisk (*).');
+            return;
+          }
+
+          if (!validateEmail(emailInput.value.trim())) {
+            showFormStatus('error', 'Please enter a valid email address so I can respond to you.');
+            return;
+          }
+
+          // UI Loading State
+          submitBtn.disabled = true;
+          if (btnSpinner) btnSpinner.style.display = 'inline-block';
+          const btnText = submitBtn.querySelector('span');
+          if (btnText) btnText.textContent = 'Sending...';
+
+          const formData = new FormData(contactForm);
+
+          fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          })
+          .then(function(response) {
+            if (response.ok) {
+              showFormStatus('success', 'Thank you for reaching out! Your message has been sent successfully. David will review your inquiry and get back to you within 1 to 2 business days.');
+              contactForm.reset();
+            } else {
+              response.json().then(function(data) {
+                if (Object.prototype.hasOwnProperty.call(data, 'errors')) {
+                  const errMsgs = data.errors.map(function(err) { return err.message; }).join(', ');
+                  showFormStatus('error', 'Submission issue: ' + errMsgs);
+                } else {
+                  showFormStatus('error', 'There was a problem submitting your form. Please try again or email contact.davidtenny18@gmail.com directly.');
+                }
+              }).catch(function() {
+                showFormStatus('error', 'There was a problem submitting your form. Please email contact.davidtenny18@gmail.com directly.');
+              });
+            }
+          })
+          .catch(function(error) {
+            // Network failure - fall back to standard HTML form submission
+            console.warn('AJAX fetch failed, attempting native submit fallback:', error);
+            contactForm.submit();
+          })
+          .finally(function() {
+            submitBtn.disabled = false;
+            if (btnSpinner) btnSpinner.style.display = 'none';
+            if (btnText) btnText.textContent = 'Send Message';
+          });
+        });
+      }
+
+      function showFormStatus(type, message) {
+        if (!statusMsg) return;
+        statusMsg.className = 'form-status ' + type;
+        statusMsg.textContent = message;
+        statusMsg.style.display = 'block';
+        statusMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+
+    });
+  </script>
+</body>
+</html>

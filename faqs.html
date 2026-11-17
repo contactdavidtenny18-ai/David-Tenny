@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs | David Tenny Book Marketing — Frequently Asked Questions</title>
+<meta name="description" content="Find detailed answers to common questions about David Tenny Book Marketing — including book promotion services, author branding, book launch support, pricing packages, and how we work with authors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DAVID TENNY BOOK MARKETING — CORE DESIGN SYSTEM
+   ============================================================ */
+:root{
+  --bg-primary:#090909;
+  --bg-secondary:#211A16;
+  --bronze:#A87945;
+  --bronze-soft:#c39a67;
+  --lavender:#B8A4D4;
+  --ivory:#F5F2ED;
+  --white:#FFFFFF;
+  --line:rgba(168,121,69,.22);
+  --line-soft:rgba(245,242,237,.09);
+  --serif:'Playfair Display', Georgia, serif;
+  --serif-alt:'Cormorant Garamond', Georgia, serif;
+  --sans:'Jost', 'Segoe UI', sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg-primary);color:var(--ivory);
+  font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.8;
+  letter-spacing:.015em;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+::selection{background:var(--bronze);color:var(--bg-primary);}
+::-webkit-scrollbar{width:10px;}
+::-webkit-scrollbar-track{background:#0d0c0b;}
+::-webkit-scrollbar-thumb{background:#3a2f25;border-radius:6px;}
+::-webkit-scrollbar-thumb:hover{background:var(--bronze);}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;color:var(--white);line-height:1.18;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:12px;font-weight:500;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--bronze-soft);margin-bottom:22px;
+}
+.eyebrow::before{content:"";width:42px;height:1px;background:linear-gradient(90deg,transparent,var(--bronze));}
+.eyebrow.center::after{content:"";width:42px;height:1px;background:linear-gradient(90deg,var(--bronze),transparent);}
+.section-title{font-size:clamp(30px,4vw,52px);margin-bottom:26px;}
+.lead{font-family:var(--serif-alt);font-size:clamp(19px,1.6vw,23px);font-weight:500;color:rgba(245,242,237,.88);line-height:1.65;font-style:italic;}
+.body-text{color:rgba(245,242,237,.72);max-width:640px;}
+.body-text p + p{margin-top:18px;}
+
+.container{width:min(1200px,90%);margin:0 auto;}
+.section{padding:clamp(80px,9vw,130px) 0;position:relative;}
+.center{text-align:center;}
+.center .body-text,.center .lead{margin-left:auto;margin-right:auto;}
+section[id],div[id]{scroll-margin-top:100px;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  position:relative;display:inline-flex;align-items:center;gap:12px;
+  padding:16px 34px;font-size:12.5px;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;cursor:pointer;border:1px solid transparent;
+  border-radius:2px;overflow:hidden;isolation:isolate;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),background .45s var(--ease),color .45s var(--ease),border-color .45s var(--ease);
+}
+.btn .arrow{display:inline-block;transition:transform .45s var(--ease);font-size:15px;}
+.btn:hover .arrow{transform:translateX(6px);}
+.btn::after{
+  content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.22),transparent);
+  transform:skewX(-20deg);transition:left .7s var(--ease);z-index:1;
+}
+.btn:hover::after{left:140%;}
+.btn-solid{background:var(--bronze);color:#120d08;box-shadow:0 10px 30px -12px rgba(168,121,69,.55);}
+.btn-solid:hover{transform:translateY(-3px);background:var(--bronze-soft);box-shadow:0 18px 42px -12px rgba(168,121,69,.7);}
+.btn-outline{border-color:rgba(245,242,237,.35);color:var(--ivory);background:rgba(9,9,9,.25);backdrop-filter:blur(4px);}
+.btn-outline:hover{transform:translateY(-3px);border-color:var(--bronze);color:var(--bronze-soft);box-shadow:0 16px 38px -14px rgba(0,0,0,.7);}
+.btn:active{transform:translateY(-1px) scale(.98);}
+
+/* ---------- Page entrance veil ---------- */
+.page-veil{
+  position:fixed;inset:0;background:var(--bg-primary);z-index:2000;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .9s var(--ease),visibility .9s;
+}
+.page-veil.hidden{opacity:0;visibility:hidden;}
+.veil-inner{text-align:center;}
+.veil-mono{font-family:var(--serif);font-size:26px;color:var(--white);letter-spacing:.08em;opacity:0;animation:veilIn 1.2s var(--ease) forwards;}
+.veil-sub{font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:var(--bronze-soft);margin-top:10px;opacity:0;animation:veilIn 1.2s .2s var(--ease) forwards;}
+.veil-line{width:0;height:1px;background:var(--bronze);margin:22px auto 0;animation:veilLine 1.4s .3s var(--ease) forwards;}
+@keyframes veilIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+@keyframes veilLine{to{width:120px;}}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 0;
+  border-bottom:1px solid transparent;
+  transition:padding .45s var(--ease),background .45s var(--ease),box-shadow .45s var(--ease),border-color .45s;
+}
+.site-header.scrolled{
+  padding:13px 0;background:rgba(9,9,9,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);box-shadow:0 14px 40px -18px rgba(0,0,0,.85);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;width:min(1360px,94%);margin:0 auto;}
+.brand{display:flex;align-items:center;gap:14px;}
+.brand-logo{height:44px;width:auto;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5));}
+.brand-text{display:flex;flex-direction:column;line-height:1.2;}
+.brand-name{font-family:var(--serif);font-size:19px;color:var(--white);letter-spacing:.04em;}
+.brand-tag{font-size:9.5px;letter-spacing:.4em;text-transform:uppercase;color:var(--bronze-soft);margin-top:3px;}
+.nav-desktop{display:flex;align-items:center;gap:34px;}
+.nav-link{
+  position:relative;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(245,242,237,.78);padding:6px 0;transition:color .35s;
+}
+.nav-link::after{
+  content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--bronze);
+  transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease);
+}
+.nav-link:hover{color:var(--white);}
+.nav-link:hover::after{transform:scaleX(1);transform-origin:left;}
+.nav-link.active{color:var(--bronze-soft);}
+.nav-link.active::after{transform:scaleX(1);}
+.nav-cta{
+  padding:11px 24px;border:1px solid var(--bronze);border-radius:2px;
+  font-size:11.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze-soft);
+  transition:background .4s,color .4s,box-shadow .4s,transform .4s var(--ease);
+}
+.nav-cta:hover{background:var(--bronze);color:#120d08;transform:translateY(-2px);box-shadow:0 12px 26px -10px rgba(168,121,69,.6);}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;position:relative;z-index:1100;}
+.nav-toggle span{display:block;width:26px;height:1.5px;background:var(--ivory);margin:6px auto;transition:.45s var(--ease);}
+.nav-toggle.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);background:var(--bronze-soft);}
+.nav-toggle.open span:nth-child(2){opacity:0;transform:translateX(-12px);}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);background:var(--bronze-soft);}
+.mobile-menu{
+  position:fixed;inset:0;z-index:1050;visibility:hidden;
+  background:linear-gradient(160deg,#0d0b0a 0%,#17110d 55%,#211A16 100%);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;
+  clip-path:circle(0% at calc(100% - 44px) 44px);transition:clip-path .8s var(--ease);
+}
+.mobile-menu.open{clip-path:circle(150% at calc(100% - 44px) 44px);visibility:visible;}
+.mobile-menu a{
+  font-family:var(--serif);font-size:clamp(26px,6vw,34px);color:var(--ivory);
+  padding:10px 20px;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s,color .3s;
+}
+.mobile-menu.open a{opacity:1;transform:translateY(0);}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--bronze-soft);}
+.mobile-menu .mm-email{margin-top:26px;font-family:var(--sans);font-size:13px;letter-spacing:.14em;color:var(--lavender);}
+
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+.page-hero{position:relative;min-height:72vh;display:flex;align-items:flex-end;overflow:hidden;}
+.page-hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(180deg,rgba(9,9,9,.62) 0%,rgba(9,9,9,.38) 45%,rgba(9,9,9,.96) 98%),
+    linear-gradient(100deg,rgba(9,9,9,.74) 0%,rgba(9,9,9,.18) 70%),
+    url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=2000&auto=format&fit=crop') center 45%/cover no-repeat,
+    var(--bg-secondary);
+  transform:scale(1.12);animation:heroZoom 3s var(--ease) forwards;
+}
+@keyframes heroZoom{to{transform:scale(1.02);}}
+.hero-grain{
+  position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.28'/%3E%3C/svg%3E");
+}
+.page-hero-content{position:relative;z-index:2;width:min(1200px,90%);margin:0 auto;padding:190px 0 84px;}
+.page-hero h1{
+  font-size:clamp(40px,6vw,74px);max-width:17ch;letter-spacing:-.01em;
+  opacity:0;animation:fadeUp 1.1s .6s var(--ease) forwards;
+}
+.page-hero h1 em{font-family:var(--serif-alt);font-style:italic;font-weight:500;color:var(--bronze-soft);}
+.page-hero .hero-sub{
+  font-family:var(--serif-alt);font-size:clamp(18px,1.8vw,23px);font-style:italic;font-weight:500;
+  color:rgba(245,242,237,.9);max-width:620px;margin-top:24px;line-height:1.6;
+  opacity:0;animation:fadeUp 1.1s .85s var(--ease) forwards;
+}
+.page-hero .eyebrow{opacity:0;animation:fadeUp 1s .45s var(--ease) forwards;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(34px);}to{opacity:1;transform:translateY(0);}}
+
+/* ---------- Scroll reveal ---------- */
+.reveal{opacity:0;transform:translateY(44px);transition:opacity 1s var(--ease),transform 1s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-46px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease);}
+.reveal-right{opacity:0;transform:translateX(46px);transition:opacity 1.05s var(--ease),transform 1.05s var(--ease);}
+.reveal-left.visible,.reveal-right.visible{opacity:1;transform:translateX(0);}
+
+/* ============================================================
+   CATEGORY QUICK BAR & CONTROLS
+   ============================================================ */
+.faq-controls-bar{
+  padding:36px 0;border-bottom:1px solid var(--line-soft);
+  background:linear-gradient(180deg,#0c0a08,#090909);
+}
+.faq-controls-inner{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
+}
+.faq-cat-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.faq-cat-chip{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  border:1px solid var(--line-soft);border-radius:40px;padding:10px 20px;
+  color:rgba(245,242,237,.72);background:rgba(20,15,12,.55);
+  transition:border-color .4s,color .4s,background .4s,transform .4s var(--ease);
+}
+.faq-cat-chip span{color:var(--bronze);font-family:var(--serif-alt);font-style:italic;margin-right:7px;font-size:13px;}
+.faq-cat-chip:hover{border-color:var(--bronze);color:var(--bronze-soft);background:rgba(168,121,69,.08);transform:translateY(-2px);}
+.faq-bulk-btns{display:flex;gap:10px;}
+.faq-util-btn{
+  background:transparent;border:1px solid var(--line-soft);border-radius:3px;
+  padding:9px 16px;font-family:var(--sans);font-size:10.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(245,242,237,.65);cursor:pointer;
+  transition:border-color .35s,color .35s,background .35s;
+}
+.faq-util-btn:hover{border-color:var(--lavender);color:var(--lavender);background:rgba(184,164,212,.06);}
+
+/* ============================================================
+   FAQ LAYOUT (SIDEBAR + ACCORDION GROUPS)
+   ============================================================ */
+.faq-workspace{
+  display:grid;grid-template-columns:300px 1fr;gap:clamp(44px,6vw,84px);align-items:start;
+}
+.faq-sidebar{position:sticky;top:110px;display:flex;flex-direction:column;gap:28px;}
+.sidebar-nav-card{
+  background:rgba(20,15,12,.76);backdrop-filter:blur(10px);
+  border:1px solid var(--line-soft);border-radius:5px;padding:30px 26px;
+}
+.sidebar-nav-card h3{
+  font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.34em;
+  text-transform:uppercase;color:var(--bronze-soft);margin-bottom:20px;
+}
+.sidebar-links{display:flex;flex-direction:column;gap:4px;}
+.sidebar-links a{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 14px;border-radius:3px;font-size:14px;color:rgba(245,242,237,.7);
+  border-left:2px solid transparent;
+  transition:background .35s,color .35s,border-color .35s,padding-left .35s var(--ease);
+}
+.sidebar-links a:hover,.sidebar-links a.active{
+  background:rgba(168,121,69,.08);color:var(--white);border-left-color:var(--bronze);padding-left:18px;
+}
+.sidebar-links .count{
+  font-family:var(--serif-alt);font-style:italic;font-size:14px;color:var(--bronze-soft);
+}
+
+.sidebar-photo-card{
+  position:relative;border-radius:5px;overflow:hidden;min-height:310px;
+  border:1px solid var(--line-soft);display:flex;flex-direction:column;justify-content:flex-end;
+  padding:26px;box-shadow:0 30px 60px -24px rgba(0,0,0,.85);
+}
+.sidebar-photo-card .spc-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(9,9,9,.18) 0%,rgba(9,9,9,.92) 90%),
+    url('https://images.unsplash.com/photo-1474932430478-367dbb6832c1?q=80&w=900&auto=format&fit=crop') center/cover no-repeat,
+    var(--bg-secondary);
+  transition:transform 1.2s var(--ease);
+}
+.sidebar-photo-card:hover .spc-bg{transform:scale(1.06);}
+.sidebar-photo-card .spc-content{position:relative;z-index:2;}
+.sidebar-photo-card .spc-tag{
+  font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--bronze-soft);margin-bottom:8px;
+}
+.sidebar-photo-card h4{font-size:20px;margin-bottom:10px;}
+.sidebar-photo-card p{font-size:13.5px;color:rgba(245,242,237,.68);line-height:1.65;margin-bottom:16px;}
+.sidebar-photo-card a{
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--lavender);
+  display:inline-flex;align-items:center;gap:8px;transition:gap .35s var(--ease),color .35s;
+}
+.sidebar-photo-card a:hover{gap:14px;color:var(--white);}
+
+/* ============================================================
+   FAQ CATEGORY BLOCKS & ACCORDION ITEMS
+   ============================================================ */
+.faq-cat-block + .faq-cat-block{margin-top:86px;}
+.faq-cat-header{
+  padding-bottom:28px;margin-bottom:28px;border-bottom:1px solid var(--line);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;
+}
+.faq-cat-header .fch-num{
+  font-family:var(--serif-alt);font-style:italic;font-size:16px;color:var(--bronze-soft);
+  letter-spacing:.14em;display:block;margin-bottom:6px;
+}
+.faq-cat-header h2{font-size:clamp(26px,3vw,38px);}
+.faq-cat-header p{font-size:14.5px;color:rgba(245,242,237,.6);max-width:460px;}
+
+.accordion-list{display:flex;flex-direction:column;gap:14px;}
+.faq-item{
+  background:rgba(18,14,11,.74);border:1px solid var(--line-soft);border-radius:4px;
+  transition:border-color .45s,background .45s,box-shadow .45s;overflow:hidden;
+}
+.faq-item:hover{border-color:rgba(168,121,69,.32);}
+.faq-item.open{
+  background:rgba(28,21,16,.88);border-color:var(--line);
+  box-shadow:0 24px 50px -24px rgba(0,0,0,.85);
+}
+.faq-heading{margin:0;font-size:inherit;}
+.faq-trigger{
+  width:100%;background:none;border:none;text-align:left;cursor:pointer;
+  padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px;
+  color:var(--white);font-family:var(--serif);font-size:clamp(18px,1.65vw,21px);
+  font-weight:500;line-height:1.35;transition:color .35s;
+}
+.faq-trigger:hover{color:var(--bronze-soft);}
+.faq-item.open .faq-trigger{color:var(--bronze-soft);}
+.faq-q-left{display:flex;align-items:baseline;gap:16px;}
+.faq-q-idx{
+  font-family:var(--serif-alt);font-style:italic;font-size:16px;
+  color:rgba(168,121,69,.65);flex:0 0 auto;min-width:24px;
+}
+.faq-icon{
+  flex:0 0 auto;width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(168,121,69,.06);
+  position:relative;transition:transform .5s var(--ease),background .4s,border-color .4s;
+}
+.faq-icon::before,.faq-icon::after{
+  content:"";position:absolute;top:50%;left:50%;background:var(--bronze-soft);
+  transform:translate(-50%,-50%);transition:transform .45s var(--ease),opacity .35s;
+}
+.faq-icon::before{width:13px;height:1.5px;}
+.faq-icon::after{width:1.5px;height:13px;}
+.faq-item.open .faq-icon{
+  transform:rotate(180deg);background:var(--bronze);border-color:var(--bronze);
+}
+.faq-item.open .faq-icon::before{background:#120d08;}
+.faq-item.open .faq-icon::after{transform:translate(-50%,-50%) scaleY(0);opacity:0;}
+
+.faq-panel{
+  display:grid;grid-template-rows:0fr;opacity:0;
+  transition:grid-template-rows .52s var(--ease),opacity .42s var(--ease);
+}
+.faq-item.open .faq-panel{grid-template-rows:1fr;opacity:1;}
+.faq-panel-inner{overflow:hidden;}
+.faq-answer{
+  padding:0 28px 26px 68px;color:rgba(245,242,237,.74);
+  font-size:15.5px;line-height:1.82;border-top:1px solid rgba(245,242,237,.05);
+  padding-top:18px;
+}
+.faq-answer p + p{margin-top:14px;}
+.faq-answer a{
+  color:var(--lavender);border-bottom:1px solid rgba(184,164,212,.35);
+  transition:color .3s,border-color .3s;
+}
+.faq-answer a:hover{color:var(--white);border-color:var(--bronze);}
+
+/* ============================================================
+   EDITORIAL PHOTO BREAK INSIDE FAQ STREAM
+   ============================================================ */
+.faq-visual-break{
+  margin:76px 0;position:relative;border-radius:5px;overflow:hidden;min-height:260px;
+  border:1px solid var(--line);display:flex;align-items:center;
+  box-shadow:0 34px 70px -28px rgba(0,0,0,.9);
+}
+.faq-visual-break .fvb-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(95deg,rgba(9,9,9,.92) 15%,rgba(9,9,9,.45) 85%),
+    url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat,
+    var(--bg-secondary);
+  transition:transform 1.5s var(--ease);
+}
+.faq-visual-break:hover .fvb-bg{transform:scale(1.04);}
+.faq-visual-break .fvb-content{
+  position:relative;z-index:2;padding:42px clamp(28px,5vw,56px);max-width:640px;
+}
+.faq-visual-break .fvb-quote{
+  font-family:var(--serif-alt);font-style:italic;font-size:clamp(21px,2.2vw,27px);
+  color:var(--white);line-height:1.48;margin-bottom:14px;
+}
+.faq-visual-break p{font-size:14px;color:rgba(245,242,237,.7);}
+
+/* ============================================================
+   PERSONAL AUTHOR-SUPPORT CARD (WITH MyPhoto.png)
+   ============================================================ */
+.personal-note-card{
+  margin-top:46px;padding:34px 36px;border-radius:5px;
+  background:linear-gradient(145deg,rgba(33,26,22,.88),rgba(15,12,10,.94));
+  border:1px solid var(--line);display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.pnc-avatar{
+  width:78px;height:78px;border-radius:50%;overflow:hidden;flex:0 0 auto;position:relative;
+  border:1px solid var(--bronze);background:linear-gradient(160deg,#2a211a,#120d09);
+  display:flex;align-items:center;justify-content:center;
+}
+.pnc-avatar span{font-family:var(--serif);font-size:24px;color:var(--bronze-soft);}
+.pnc-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.pnc-body{flex:1;min-width:240px;}
+.pnc-body h3{font-size:21px;margin-bottom:6px;}
+.pnc-body p{font-size:14.5px;color:rgba(245,242,237,.7);line-height:1.7;}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta{position:relative;overflow:hidden;text-align:center;}
+.final-cta .fc-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,var(--bg-primary) 0%,rgba(9,9,9,.74) 45%,var(--bg-primary) 100%),
+    url('https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?q=80&w=2000&auto=format&fit=crop') center 40%/cover no-repeat,
+    var(--bg-secondary);
+}
+.fc-inner{position:relative;z-index:2;max-width:800px;margin:0 auto;}
+.fc-inner h2{font-size:clamp(30px,4.2vw,54px);max-width:20ch;margin:0 auto 24px;}
+.fc-inner h2 em{font-family:var(--serif-alt);font-style:italic;color:var(--bronze-soft);font-weight:500;}
+.fc-inner .body-text{margin:0 auto;}
+.fc-actions{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:42px;}
+.email-link{
+  display:inline-flex;align-items:center;gap:12px;margin-top:36px;
+  font-family:var(--serif-alt);font-size:clamp(16px,1.8vw,21px);font-style:italic;color:var(--lavender);
+  border-bottom:1px solid rgba(184,164,212,.4);padding-bottom:5px;transition:color .35s,border-color .35s;
+}
+.email-link:hover{color:var(--white);border-color:var(--bronze);}
+.email-link svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:#060505;border-top:1px solid var(--line-soft);padding:80px 0 0;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:50px;padding-bottom:64px;}
+.footer-brand img{height:40px;margin-bottom:18px;}
+.footer-brand .fb-name{font-family:var(--serif);font-size:20px;color:var(--white);margin-bottom:4px;}
+.footer-brand p{font-size:14px;color:rgba(245,242,237,.55);line-height:1.75;max-width:320px;margin-top:12px;}
+.footer-col h4{font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;color:var(--bronze-soft);margin-bottom:22px;}
+.footer-col ul{display:flex;flex-direction:column;gap:12px;}
+.footer-col a{font-size:14.5px;color:rgba(245,242,237,.66);position:relative;display:inline-block;transition:color .35s,padding-left .4s var(--ease);}
+.footer-col a::before{content:"";position:absolute;left:0;top:50%;width:0;height:1px;background:var(--bronze);transition:width .4s var(--ease);}
+.footer-col a:hover{color:var(--white);padding-left:16px;}
+.footer-col a:hover::before{width:10px;}
+.footer-contact p{font-size:14px;color:rgba(245,242,237,.6);margin-bottom:14px;}
+.footer-contact a{font-size:15px;color:var(--lavender);border-bottom:1px solid rgba(184,164,212,.3);padding-bottom:2px;transition:color .3s,border-color .3s;}
+.footer-contact a:hover{color:var(--white);border-color:var(--bronze);}
+.footer-bottom{
+  border-top:1px solid var(--line-soft);padding:26px 0;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+  font-size:12.5px;color:rgba(245,242,237,.4);letter-spacing:.06em;
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1024px){
+  .nav-desktop{display:none;}
+  .nav-toggle{display:block;}
+  .faq-workspace{grid-template-columns:1fr;}
+  .faq-sidebar{position:relative;top:0;display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:720px){
+  body{font-size:16px;}
+  .faq-sidebar{grid-template-columns:1fr;}
+  .faq-trigger{padding:20px 20px;font-size:18px;}
+  .faq-answer{padding:16px 20px 22px 20px;}
+  .faq-controls-inner{flex-direction:column;align-items:flex-start;}
+  .footer-grid{grid-template-columns:1fr;gap:38px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+  .fc-actions .btn{width:100%;justify-content:center;}
+}
+
+/* ---------- Reduced motion & no-JS fallbacks ---------- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;}
+  html{scroll-behavior:auto;}
+  .reveal,.reveal-left,.reveal-right{opacity:1 !important;transform:none !important;}
+  .page-hero-bg{animation:none;transform:none;}
+}
+.no-js .reveal,.no-js .reveal-left,.no-js .reveal-right,
+.no-js .page-hero h1,.no-js .page-hero .hero-sub,.no-js .page-hero .eyebrow{opacity:1 !important;transform:none !important;}
+.no-js .page-veil{display:none;}
+.no-js .faq-panel{grid-template-rows:1fr !important;opacity:1 !important;}
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+
+<!-- ================= PAGE ENTRANCE VEIL ================= -->
+<div class="page-veil" id="pageVeil" aria-hidden="true">
+  <div class="veil-inner">
+    <div class="veil-mono">David Tenny</div>
+    <div class="veil-sub">Book Marketing</div>
+    <div class="veil-line"></div>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="David Tenny Book Marketing — Home">
+      <img src="Logo.png" alt="David Tenny Book Marketing logo" class="brand-logo"
+           onerror="this.style.display='none';document.getElementById('brandFallback').style.display='flex';">
+      <span id="brandFallback" style="display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--bronze);border-radius:50%;font-family:var(--serif);font-size:17px;color:var(--bronze-soft);">DT</span>
+      <span class="brand-text">
+        <span class="brand-name">David Tenny</span>
+        <span class="brand-tag">Book Marketing</span>
+      </span>
+    </a>
+    <nav class="nav-desktop" aria-label="Primary navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about-us.html" class="nav-link">About Us</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="faqs.html" class="nav-link active" aria-current="page">FAQs</a>
+      <a href="contact-us.html" class="nav-cta">Contact Us</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="index.html">Home</a>
+  <a href="about-us.html">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="faqs.html" class="active">FAQs</a>
+  <a href="contact-us.html">Contact Us</a>
+  <a href="mailto:contact.davidtenny18@gmail.com" class="mm-email">contact.davidtenny18@gmail.com</a>
+</nav>
+
+<main>
+
+<!-- ================= PAGE HERO ================= -->
+<section class="page-hero" aria-label="Frequently Asked Questions">
+  <div class="page-hero-bg" role="img" aria-label="Open books and literary notebooks arranged in warm lighting"></div>
+  <div class="hero-grain"></div>
+  <div class="page-hero-content">
+    <div class="eyebrow">Frequently Asked Questions</div>
+    <h1>Thoughtful Answers for <em>Serious Authors.</em></h1>
+    <p class="hero-sub">Clear, candid information about how professional book marketing works, the services available, how packages are structured, and what to expect when working together.</p>
+  </div>
+</section>
+
+<!-- ================= CATEGORY QUICK BAR ================= -->
+<div class="faq-controls-bar reveal">
+  <div class="container faq-controls-inner">
+    <div class="faq-cat-chips" aria-label="FAQ categories">
+      <a href="#general-questions" class="faq-cat-chip"><span>01</span>General Questions</a>
+      <a href="#services-questions" class="faq-cat-chip"><span>02</span>Services Questions</a>
+      <a href="#pricing-questions" class="faq-cat-chip"><span>03</span>Pricing Questions</a>
+      <a href="#working-with-me" class="faq-cat-chip"><span>04</span>Working With Me</a>
+    </div>
+    <div class="faq-bulk-btns">
+      <button type="button" class="faq-util-btn" id="expandAllBtn">Expand All</button>
+      <button type="button" class="faq-util-btn" id="collapseAllBtn">Collapse All</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FAQ WORKSPACE ================= -->
+<section class="section" aria-label="Frequently Asked Questions Catalogue">
+  <div class="container faq-workspace">
+
+    <!-- ---------- Sticky Sidebar ---------- -->
+    <aside class="faq-sidebar reveal-left" aria-label="FAQ category navigation">
+      <div class="sidebar-nav-card">
+        <h3>Browse by Category</h3>
+        <div class="sidebar-links">
+          <a href="#general-questions" class="active"><span>General Questions</span><span class="count">07</span></a>
+          <a href="#services-questions"><span>Services Questions</span><span class="count">07</span></a>
+          <a href="#pricing-questions"><span>Pricing Questions</span><span class="count">04</span></a>
+          <a href="#working-with-me"><span>Working With Me</span><span class="count">05</span></a>
+        </div>
+      </div>
+
+      <div class="sidebar-photo-card">
+        <div class="spc-bg" role="img" aria-label="Close-up of printed book pages in warm light"></div>
+        <div class="spc-content">
+          <div class="spc-tag">Personal Guidance</div>
+          <h4>Have a Question Specific to Your Book?</h4>
+          <p>Every book has its own audience and publishing goals. Reach out directly and share what you are working on.</p>
+          <a href="contact-us.html">Ask a Question <span>&rarr;</span></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ---------- Accordion Stream ---------- -->
+    <div class="faq-stream">
+
+      <!-- ====================================================
+           CATEGORY 1: GENERAL QUESTIONS
+           ==================================================== -->
+      <div class="faq-cat-block reveal" id="general-questions">
+        <div class="faq-cat-header">
+          <div>
+            <span class="fch-num">Category 01</span>
+            <h2>General Questions</h2>
+          </div>
+          <p>Understanding the role of book marketing and who our services are designed to support.</p>
+        </div>
+
+        <div class="accordion-list">
+
+          <!-- Q1 -->
+          <div class="faq-item open">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-panel-1" id="faq-btn-1">
+                <span class="faq-q-left"><span class="faq-q-idx">01.</span><span>What does a professional book marketer do?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>A professional book marketer helps bridge the distance between a finished book and the readers most likely to appreciate it. Rather than relying on guesswork or scattered posts, a book marketer studies your book's genre, themes, and intended audience, then builds a structured plan for how the book is presented, positioned, and promoted.</p>
+                  <p>In practice, this encompasses marketing strategy, book promotion, author branding, social media direction, book launch planning, promotional copywriting, reader engagement, and platform development — all working together so your book is presented professionally and given meaningful opportunities to be discovered.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">
+                <span class="faq-q-left"><span class="faq-q-idx">02.</span><span>Who can benefit from book marketing?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Any author who takes their work seriously and wants a clearer, stronger way to connect with readers can benefit from professional book marketing. This includes authors preparing for an upcoming release, writers whose already-published books need renewed visibility, and authors who want to establish a recognisable long-term author brand.</p>
+                  <p>Whether you need a complete campaign from the ground up or focused support in one specific area — such as refining your book description, structuring a launch, or organising your social media presence — thoughtful marketing brings clarity and structure to your promotional efforts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">
+                <span class="faq-q-left"><span class="faq-q-idx">03.</span><span>Do you work with independent authors?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes — independent and self-published authors are at the heart of David Tenny Book Marketing. Independent publishing gives writers remarkable creative freedom, but it also places the responsibility of marketing, branding, and visibility squarely on the author's shoulders.</p>
+                  <p>My services are designed to give independent authors the strategic direction, creative presentation, and promotional structure needed to present their books at a high professional standard without having to navigate every marketing decision alone.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">
+                <span class="faq-q-left"><span class="faq-q-idx">04.</span><span>Do you support first-time authors?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Absolutely. Launching a first book is an exciting milestone, and it is completely natural for the marketing side of publishing to feel unfamiliar at first. You do not need an existing audience or prior marketing experience to get started.</p>
+                  <p>For debut authors, I focus on building clean, practical foundations — clarifying who your readers are, shaping your initial author presence, refining how your book is described, and creating a manageable plan so your debut enters the world with confidence and direction.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">
+                <span class="faq-q-left"><span class="faq-q-idx">05.</span><span>What genres do you work with?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>I work across a wide range of both fiction and nonfiction genres — including literary fiction, mystery, thriller and suspense, historical fiction, romance, speculative fiction, memoir, personal development, business, history, and poetry, among others.</p>
+                  <p>Because every project begins with studying your specific genre and the expectations of its readers, the strategy, tone, and visual direction are always adapted to suit the world your book belongs to.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-6" id="faq-btn-6">
+                <span class="faq-q-left"><span class="faq-q-idx">06.</span><span>Why is book marketing important?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Writing a compelling book is a major achievement, yet publication alone does not automatically place a book in front of readers. In a crowded publishing environment, readers can only choose from the books they actually discover and recognise as meant for them.</p>
+                  <p>Book marketing matters because it gives your work visibility, communicates its value clearly, builds recognition around your name as an author, and creates steady opportunities for readers to encounter, engage with, and remember your writing.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-7" id="faq-btn-7">
+                <span class="faq-q-left"><span class="faq-q-idx">07.</span><span>Can authors request individual services?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes. While full packages are convenient for authors looking for coordinated multi-channel support, you are always welcome to request an individual service — whether that is a standalone marketing strategy, author branding guidelines, book launch planning, or promotional copywriting.</p>
+                  <p>You can explore all ten areas on the <a href="services.html">Services page</a> and mention the specific service you are interested in when you get in touch.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ====================================================
+           CATEGORY 2: SERVICES QUESTIONS
+           ==================================================== -->
+      <div class="faq-cat-block reveal" id="services-questions">
+        <div class="faq-cat-header">
+          <div>
+            <span class="fch-num">Category 02</span>
+            <h2>Services Questions</h2>
+          </div>
+          <p>How each area of promotion, branding, content, and launch support works in practice.</p>
+        </div>
+
+        <div class="accordion-list">
+
+          <!-- Q8 -->
+          <div class="faq-item open">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-panel-8" id="faq-btn-8">
+                <span class="faq-q-left"><span class="faq-q-idx">08.</span><span>What types of book promotion do you offer?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-8" role="region" aria-labelledby="faq-btn-8">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>I offer ten core categories of book marketing and promotional support: Book Marketing Strategy, Book Promotion and Visibility, Author Branding, Social Media Marketing, Book Launch Marketing, Content Marketing and Copywriting, Reader Engagement, Digital Marketing Support, Author Platform Development, and Promotional Campaign Development.</p>
+                  <p>Together, these cover everything from high-level positioning and launch coordination to hands-on promotional copy, campaign concepts, and long-term audience building. Full details for each category can be found on the <a href="services.html">Services page</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-9" id="faq-btn-9">
+                <span class="faq-q-left"><span class="faq-q-idx">09.</span><span>Can you help with author branding?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-9" role="region" aria-labelledby="faq-btn-9">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes. Author branding is one of the most valuable investments a writer can make, because readers often fall in love with an author's voice and identity across multiple books. I help you define a cohesive, authentic brand — including your positioning, brand voice, messaging themes, professional biographies, and visual direction.</p>
+                  <p>The goal is never to turn you into something artificial, but to distil what makes your writing distinct so readers experience a consistent, memorable impression wherever they encounter your name.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q10 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-10" id="faq-btn-10">
+                <span class="faq-q-left"><span class="faq-q-idx">10.</span><span>Do you offer social media marketing?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-10" role="region" aria-labelledby="faq-btn-10">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes. Social media marketing support is designed to help authors maintain an engaging, professional presence without feeling overwhelmed by daily posting. Depending on your needs, this includes identifying the platforms best suited to your readership, establishing clear content pillars, building structured content calendars, writing post and caption copy, and providing creative direction for promotional visuals.</p>
+                  <p>Everything is shaped around your genre and voice so your social channels feel genuine and inviting to readers.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q11 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-11" id="faq-btn-11">
+                <span class="faq-q-left"><span class="faq-q-idx">11.</span><span>Can you help prepare a book launch?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-11" role="region" aria-labelledby="faq-btn-11">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes. A well-prepared book launch unfolds across three stages: pre-launch anticipation, release-week visibility, and post-launch momentum. I help you plan and coordinate each stage with a structured launch roadmap, teaser and countdown concepts, release announcements, promotional copy, and a clear schedule of activities.</p>
+                  <p>Whether you are months ahead of publication or approaching your release window, structured launch support helps ensure your book's arrival is organised and impactful.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q12 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-12" id="faq-btn-12">
+                <span class="faq-q-left"><span class="faq-q-idx">12.</span><span>Do you create promotional content?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-12" role="region" aria-labelledby="faq-btn-12">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes. Through Content Marketing and Copywriting as well as Promotional Campaign Development, I craft the written and conceptual materials needed to present your book persuasively. This includes refined book descriptions and blurbs, author biographies, promotional hooks and taglines, email newsletter copy, social media post copy, blog or article drafts, and creative direction for promotional graphics.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q13 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-13" id="faq-btn-13">
+                <span class="faq-q-left"><span class="faq-q-idx">13.</span><span>Can you develop a customized marketing strategy?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-13" role="region" aria-labelledby="faq-btn-13">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Every strategy I develop is customized. No two books share the exact same voice, audience, or publishing context, which is why generic checklists rarely deliver meaningful visibility. Your marketing strategy is built around your specific book, your target readers, your genre positioning, and the channels that make the greatest sense for your goals.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q14 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-14" id="faq-btn-14">
+                <span class="faq-q-left"><span class="faq-q-idx">14.</span><span>Do you support ongoing promotional activities?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-14" role="region" aria-labelledby="faq-btn-14">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes. Book marketing does not end after launch week. Many authors seek ongoing support to keep published titles visible, nurture reader engagement between releases, grow their author platform, or build momentum across a multi-book series. Support can be arranged for a focused campaign period or structured around longer-term promotional continuity.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ---------- Photographic Editorial Break ---------- -->
+      <div class="faq-visual-break reveal">
+        <div class="fvb-bg" role="img" aria-label="An open hardcover book illuminated by warm atmospheric light"></div>
+        <div class="fvb-content">
+          <div class="fvb-quote">&ldquo;Thoughtful marketing begins with clarity — knowing what your book promises and who is waiting to read it.&rdquo;</div>
+          <p>Every service and package can be tailored around your book's stage of publication and your personal goals as an author.</p>
+        </div>
+      </div>
+
+      <!-- ====================================================
+           CATEGORY 3: PRICING QUESTIONS
+           ==================================================== -->
+      <div class="faq-cat-block reveal" id="pricing-questions">
+        <div class="faq-cat-header">
+          <div>
+            <span class="fch-num">Category 03</span>
+            <h2>Pricing Questions</h2>
+          </div>
+          <p>How packages and custom scopes are structured around each author's requirements.</p>
+        </div>
+
+        <div class="accordion-list">
+
+          <!-- Q15 -->
+          <div class="faq-item open">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-panel-15" id="faq-btn-15">
+                <span class="faq-q-left"><span class="faq-q-idx">15.</span><span>How are your services priced?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-15" role="region" aria-labelledby="faq-btn-15">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Services are priced according to the level of support, the range of deliverables, and the scope of work required for your project. Because an author seeking a single refined book description has very different requirements from an author commissioning a full book launch campaign, pricing is always aligned with the actual work involved and confirmed clearly in writing before any project begins.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q16 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-16" id="faq-btn-16">
+                <span class="faq-q-left"><span class="faq-q-idx">16.</span><span>Do you offer marketing packages?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-16" role="region" aria-labelledby="faq-btn-16">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes. I offer four structured package levels on the <a href="pricing.html">Pricing page</a>: <em>Essential Book Marketing</em> for foundational introductory support, <em>Author Visibility</em> for broader ongoing promotion, <em>Comprehensive Book Marketing</em> for extensive multi-channel campaigns, and <em>Custom Marketing Solutions</em> for fully tailored requirements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q17 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-17" id="faq-btn-17">
+                <span class="faq-q-left"><span class="faq-q-idx">17.</span><span>Can I request a customized package?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-17" role="region" aria-labelledby="faq-btn-17">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes — our <em>Custom Marketing Solutions</em> option exists specifically for authors whose needs combine elements from different areas of the catalogue. You can select the exact services that fit your book and goals, and I will prepare a tailored scope and quote around those priorities.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q18 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-18" id="faq-btn-18">
+                <span class="faq-q-left"><span class="faq-q-idx">18.</span><span>Does pricing depend on the services required?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-18" role="region" aria-labelledby="faq-btn-18">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes. Pricing directly reflects the specific services, depth of strategy, volume of creative and written deliverables, and duration of support your project requires. This ensures that you only invest in the marketing activities that are genuinely relevant and helpful for your book.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ====================================================
+           CATEGORY 4: WORKING WITH ME
+           ==================================================== -->
+      <div class="faq-cat-block reveal" id="working-with-me">
+        <div class="faq-cat-header">
+          <div>
+            <span class="fch-num">Category 04</span>
+            <h2>Working With Me</h2>
+          </div>
+          <p>How to begin the conversation, what to share about your book, and how collaboration unfolds.</p>
+        </div>
+
+        <div class="accordion-list">
+
+          <!-- Q19 -->
+          <div class="faq-item open">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="true" aria-controls="faq-panel-19" id="faq-btn-19">
+                <span class="faq-q-left"><span class="faq-q-idx">19.</span><span>How do I get started?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-19" role="region" aria-labelledby="faq-btn-19">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Getting started is straightforward. Visit the <a href="contact-us.html">Contact Us page</a> and send a message through the contact form, or email me directly at <a href="mailto:contact.davidtenny18@gmail.com">contact.davidtenny18@gmail.com</a>. Share a few details about your book and the type of marketing support you are exploring, and I will reply by email to discuss the most suitable approach and recommended scope.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q20 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-20" id="faq-btn-20">
+                <span class="faq-q-left"><span class="faq-q-idx">20.</span><span>What information should I provide about my book?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-20" role="region" aria-labelledby="faq-btn-20">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>When you first reach out, it is helpful to include your book's title (or working title), its genre, a brief synopsis or description of what the book is about, whether it is already published or preparing for release, and which services or packages you are considering. If you already have an author website, retail link, or social media presence, sharing those is helpful too — though none of them are required to begin.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q21 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-21" id="faq-btn-21">
+                <span class="faq-q-left"><span class="faq-q-idx">21.</span><span>How can I contact you?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-21" role="region" aria-labelledby="faq-btn-21">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>All project communication takes place in writing through email and our online contact form. You can reach me at any time by completing the form on the <a href="contact-us.html">Contact Us page</a> or by sending an email directly to <a href="mailto:contact.davidtenny18@gmail.com">contact.davidtenny18@gmail.com</a>. Written communication ensures every detail of your strategy, feedback, and deliverables remains clear, organised, and easy to reference.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q22 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-22" id="faq-btn-22">
+                <span class="faq-q-left"><span class="faq-q-idx">22.</span><span>How do you understand my marketing goals?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-22" role="region" aria-labelledby="faq-btn-22">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Every collaboration begins with careful listening. Through our written intake and project discussion, I learn about your book's core themes, the readers you want to reach, where you currently stand with your platform, and what matters most to you — whether that is preparing a polished debut launch, strengthening your author identity, or building steady visibility for an existing title. Your goals shape every recommendation that follows.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q23 -->
+          <div class="faq-item">
+            <h3 class="faq-heading">
+              <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-panel-23" id="faq-btn-23">
+                <span class="faq-q-left"><span class="faq-q-idx">23.</span><span>Can I request multiple services?</span></span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-panel" id="faq-panel-23" role="region" aria-labelledby="faq-btn-23">
+              <div class="faq-panel-inner">
+                <div class="faq-answer">
+                  <p>Yes, certainly. Many authors combine multiple services — for example, pairing Book Marketing Strategy with Author Branding and Book Launch Marketing, or combining Content Copywriting with Social Media Marketing. Whether you choose one of the comprehensive packages or ask for a tailored combination of services, everything will be coordinated into one cohesive plan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Personal note with MyPhoto.png (3rd placement across the site) -->
+        <div class="personal-note-card reveal">
+          <div class="pnc-avatar">
+            <span aria-hidden="true">DT</span>
+            <img src="MyPhoto.png" alt="David Tenny, Founder of David Tenny Book Marketing" onerror="this.remove();">
+          </div>
+          <div class="pnc-body">
+            <h3>A Personal Response to Every Enquiry</h3>
+            <p>When you reach out to David Tenny Book Marketing, you communicate directly with me. If you have a question that isn't covered on this page, send me a note and I'll be glad to give you a thoughtful, straightforward answer.</p>
+          </div>
+          <a href="contact-us.html" class="btn btn-outline">Send a Message <span class="arrow">&rarr;</span></a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="section final-cta" aria-labelledby="cta-title">
+  <div class="fc-bg" role="img" aria-label="An open book and warm reading light in a quiet literary space"></div>
+  <div class="container fc-inner reveal">
+    <div class="eyebrow center">Still Curious?</div>
+    <h2 id="cta-title">Every Great Marketing Plan Starts With a <em>Simple Conversation.</em></h2>
+    <p class="body-text">Whether you know the exact service you want or you are still exploring what would help your book most, I would love to hear about your project. Reach out through the contact form or by email anytime.</p>
+    <div class="fc-actions">
+      <a href="contact-us.html" class="btn btn-solid">Contact Us <span class="arrow">&rarr;</span></a>
+      <a href="services.html" class="btn btn-outline">Explore Our Services <span class="arrow">&rarr;</span></a>
+    </div>
+    <div>
+      <a href="mailto:contact.davidtenny18@gmail.com" class="email-link">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+        contact.davidtenny18@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid reveal">
+      <div class="footer-brand">
+        <img src="Logo.png" alt="David Tenny Book Marketing logo" onerror="this.style.display='none';">
+        <div class="fb-name">David Tenny Book Marketing</div>
+        <p>Professional book marketing, creative promotion, and author branding — helping authors strengthen their presence and connect their books with readers.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Get in Touch</h4>
+        <p>For enquiries about book marketing support, reach out by email:</p>
+        <a href="mailto:contact.davidtenny18@gmail.com">contact.davidtenny18@gmail.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2025</span> David Tenny Book Marketing. All rights reserved.</span>
+      <span>Professional Book Marketing &amp; Author Branding</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   DAVID TENNY BOOK MARKETING — INTERACTION SYSTEM
+   ============================================================ */
+(function(){
+  "use strict";
+
+  var prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Page entrance veil ---------- */
+  var veil = document.getElementById("pageVeil");
+  window.addEventListener("load", function(){
+    setTimeout(function(){ veil.classList.add("hidden"); }, prefersReducedMotion ? 0 : 900);
+  });
+  setTimeout(function(){ veil.classList.add("hidden"); }, 3200);
+
+  /* ---------- Current year ---------- */
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  /* ---------- Header scroll state ---------- */
+  var header = document.getElementById("siteHeader");
+  function onScrollHeader(){
+    var y = window.scrollY || window.pageYOffset;
+    if(y > 40){ header.classList.add("scrolled"); } else { header.classList.remove("scrolled"); }
+  }
+  window.addEventListener("scroll", onScrollHeader, {passive:true});
+  onScrollHeader();
+
+  /* ---------- Mobile menu ---------- */
+  var toggle = document.getElementById("navToggle");
+  var mobileMenu = document.getElementById("mobileMenu");
+  toggle.addEventListener("click", function(){
+    var open = mobileMenu.classList.toggle("open");
+    toggle.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    document.body.style.overflow = open ? "hidden" : "";
+    if(open){
+      var links = mobileMenu.querySelectorAll("a");
+      links.forEach(function(link, i){
+        link.style.transitionDelay = (0.12 + i * 0.06) + "s";
+      });
+    }
+  });
+  mobileMenu.querySelectorAll("a").forEach(function(link){
+    link.addEventListener("click", function(){
+      mobileMenu.classList.remove("open");
+      toggle.classList.remove("open");
+      toggle.setAttribute("aria-expanded","false");
+      document.body.style.overflow = "";
+    });
+  });
+
+  /* ---------- Animated FAQ Accordions ---------- */
+  var faqItems = document.querySelectorAll(".faq-item");
+  function setItemState(item, shouldOpen){
+    var btn = item.querySelector(".faq-trigger");
+    item.classList.toggle("open", shouldOpen);
+    if(btn){
+      btn.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+    }
+  }
+
+  faqItems.forEach(function(item){
+    var btn = item.querySelector(".faq-trigger");
+    if(!btn) return;
+    btn.addEventListener("click", function(){
+      var isOpen = item.classList.contains("open");
+      setItemState(item, !isOpen);
+    });
+  });
+
+  var expandAllBtn = document.getElementById("expandAllBtn");
+  var collapseAllBtn = document.getElementById("collapseAllBtn");
+  if(expandAllBtn){
+    expandAllBtn.addEventListener("click", function(){
+      faqItems.forEach(function(item){ setItemState(item, true); });
+    });
+  }
+  if(collapseAllBtn){
+    collapseAllBtn.addEventListener("click", function(){
+      faqItems.forEach(function(item){ setItemState(item, false); });
+    });
+  }
+
+  /* ---------- Sidebar active category highlight on scroll ---------- */
+  var catBlocks = document.querySelectorAll(".faq-cat-block");
+  var sidebarLinks = document.querySelectorAll(".sidebar-links a");
+  if("IntersectionObserver" in window && catBlocks.length && sidebarLinks.length){
+    var catObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var id = "#" + entry.target.id;
+          sidebarLinks.forEach(function(link){
+            link.classList.toggle("active", link.getAttribute("href") === id);
+          });
+        }
+      });
+    }, {rootMargin:"-25% 0px -60% 0px"});
+    catBlocks.forEach(function(block){ catObserver.observe(block); });
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  if("IntersectionObserver" in window && !prefersReducedMotion){
+    var revealEls = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.08, rootMargin:"0px 0px -40px 0px"});
+    revealEls.forEach(function(el){ revealObserver.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal, .reveal-left, .reveal-right")
+      .forEach(function(el){ el.classList.add("visible"); });
+  }
+
+  /* ---------- Smooth anchor scrolling ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+    anchor.addEventListener("click", function(e){
+      var target = document.querySelector(this.getAttribute("href"));
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({behavior: prefersReducedMotion ? "auto" : "smooth", block:"start"});
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
